@@ -22,7 +22,7 @@ def main():
             count = item[char]
             if not char.isalpha():
                 continue 
-            print(f"{char}:{count}")
+            print(f"{char}: {count}")
 
         print("============= END ===============")
             
