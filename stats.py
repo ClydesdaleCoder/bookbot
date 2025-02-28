@@ -9,12 +9,24 @@ def word_count(file_contents):
     return num_words
 
 def get_letter_count(file_contents) :
-    count = {}
+    char_count = {}
     letter = file_contents.lower()
     for char in letter:
-        if char in count:
-            count[char] += 1
+        if char in char_count:
+            char_count[char] += 1
         else:       
-            count[char] = 1
-    return count
+            char_count[char] = 1
+    return char_count
+
+def sort_count_by_char(char_count):
+    chars_list = []
+    for char,count in char_count.items():
+        chars_list.append({char: count})
+
+    def sort_on(dict_l) :
+        return list(dict_l.values())[0]
+
+    chars_list.sort(reverse=True, key=sort_on)  
+
+    return chars_list
 
